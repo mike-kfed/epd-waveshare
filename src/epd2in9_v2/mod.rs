@@ -74,6 +74,7 @@ const LUT_PARTIAL_2IN9: [u8; 159] = [
     0x22, 0x0, 0x0, 0x0, 0x22, 0x17, 0x41, 0xB0, 0x32, 0x36,
 ];
 
+use embedded_graphics_core::pixelcolor::BinaryColor;
 use embedded_hal::{
     blocking::{delay::*, spi::Write},
     digital::v2::*,
@@ -96,7 +97,7 @@ pub type Display2in9 = crate::graphics::Display<
     HEIGHT,
     false,
     { buffer_len(WIDTH as usize, HEIGHT as usize) },
-    Color,
+    BinaryColor,
 >;
 
 /// Epd2in9 driver
